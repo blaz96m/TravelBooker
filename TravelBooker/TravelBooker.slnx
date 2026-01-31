@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="TravelBooker.Core.Services/TravelBooker.Core.Services.csproj" Id="31f2272a-a3f5-4038-9131-9f96858bb8f5" />
+  <Project Path="TraverlBooker.Core.Services.Abstractions/TraverlBooker.Core.Services.Abstractions.csproj" Id="90000185-81de-45a4-a6c0-adc3d192b36a" />
   <Project Path="WebApi/TravelBooker.WebApi.csproj" />
 </Solution>

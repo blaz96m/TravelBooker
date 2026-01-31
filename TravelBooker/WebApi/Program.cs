@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.HttpOverrides;
+using Serilog;
 using TravelBooker.WebApi.Extensions;
 
 namespace TravelBooker.WebApi
@@ -11,9 +12,16 @@ namespace TravelBooker.WebApi
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
-
             builder.Services.ConfigureCors();
+
+            builder.Host.UseSerilog((hostContext, configuration) =>
+            {
+                configuration.ReadFrom.Configuration(hostContext.Configuration);
+            });
+
+            builder.Services.ConfigureLoggerService();
+
+            builder.Services.AddControllers();
 
             WebApplication app = builder.Build();
 

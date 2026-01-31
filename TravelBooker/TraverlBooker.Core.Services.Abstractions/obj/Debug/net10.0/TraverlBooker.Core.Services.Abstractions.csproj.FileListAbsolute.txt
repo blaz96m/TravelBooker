@@ -1,0 +1,13 @@
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\bin\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.deps.json
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\bin\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.dll
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\bin\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.pdb
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.csproj.AssemblyReference.cache
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.AssemblyInfoInputs.cache
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.AssemblyInfo.cs
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.sourcelink.json
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.dll
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\refint\TraverlBooker.Core.Services.Abstractions.dll
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.pdb
+C:\Users\Blaž\TravelBooker\TravelBooker\TraverlBooker.Core.Services.Abstractions\obj\Debug\net10.0\ref\TraverlBooker.Core.Services.Abstractions.dll

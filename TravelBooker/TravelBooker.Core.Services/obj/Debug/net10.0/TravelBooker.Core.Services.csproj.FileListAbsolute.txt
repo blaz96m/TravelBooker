@@ -1,0 +1,16 @@
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\bin\Debug\net10.0\TravelBooker.Core.Services.deps.json
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\bin\Debug\net10.0\TravelBooker.Core.Services.dll
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\bin\Debug\net10.0\TravelBooker.Core.Services.pdb
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\bin\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.dll
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\bin\Debug\net10.0\TraverlBooker.Core.Services.Abstractions.pdb
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBooker.Core.Services.csproj.AssemblyReference.cache
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBooker.Core.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBooker.Core.Services.AssemblyInfoInputs.cache
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBooker.Core.Services.AssemblyInfo.cs
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBooker.Core.Services.csproj.CoreCompileInputs.cache
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBooker.Core.Services.sourcelink.json
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBo.64048093.Up2Date
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBooker.Core.Services.dll
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\refint\TravelBooker.Core.Services.dll
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\TravelBooker.Core.Services.pdb
+C:\Users\Blaž\TravelBooker\TravelBooker\TravelBooker.Core.Services\obj\Debug\net10.0\ref\TravelBooker.Core.Services.dll

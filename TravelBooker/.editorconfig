@@ -56,7 +56,7 @@ dotnet_prefer_system_hash_code = true
 dotnet_style_coalesce_expression = true
 dotnet_style_collection_initializer = true
 dotnet_style_explicit_tuple_names = true
-dotnet_style_namespace_match_folder = true
+dotnet_style_namespace_match_folder = false
 dotnet_style_null_propagation = true
 dotnet_style_object_initializer = true
 dotnet_style_operator_placement_when_wrapping = beginning_of_line
@@ -98,9 +98,9 @@ csharp_style_expression_bodied_constructors = false
 csharp_style_expression_bodied_indexers = true
 csharp_style_expression_bodied_lambdas = true
 csharp_style_expression_bodied_local_functions = false
-csharp_style_expression_bodied_methods = false
+csharp_style_expression_bodied_methods = true:suggestion
 csharp_style_expression_bodied_operators = false
-csharp_style_expression_bodied_properties = true
+csharp_style_expression_bodied_properties = true:suggestion
 
 # Pattern matching preferences
 csharp_style_pattern_matching_over_as_with_null_check = true
