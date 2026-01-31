@@ -1,0 +1,6 @@
+C:\Users\Blaž\source\repos\TravelBooker\WebApi\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Blaž\source\repos\TravelBooker\WebApi\obj\Debug\net10.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Blaž\source\repos\TravelBooker\WebApi\obj\Debug\net10.0\WebApi.AssemblyInfoInputs.cache
+C:\Users\Blaž\source\repos\TravelBooker\WebApi\obj\Debug\net10.0\WebApi.AssemblyInfo.cs
+C:\Users\Blaž\source\repos\TravelBooker\WebApi\obj\Debug\net10.0\WebApi.csproj.CoreCompileInputs.cache
+C:\Users\Blaž\source\repos\TravelBooker\WebApi\obj\Debug\net10.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
