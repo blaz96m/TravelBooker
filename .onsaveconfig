@@ -1,0 +1,4 @@
+
+[*.cs]
+command = dotnet
+arguments = format "{solution_directory}\TravelBooker.sln" --include {filename} --verbosity diagnostic

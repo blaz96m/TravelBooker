@@ -1,0 +1,27 @@
+# Top-most EditorConfig file
+root = true
+
+# Universal settings for all files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Core file formatting
+[*.{json,yml,md,xml}]
+indent_size = 2
+
+# Source code formatting
+[*.{js,ts,jsx,tsx,py,cs}]
+indent_size = 4
+# Tab indentation example
+# [Makefile]
+# indent_style = tab
+
+# Matches the exact files
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2

@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Project Path="TravelBooker.Api/TravelBooker.Api.csproj" />
+  <Project Path="TravelBooker.Application/TravelBooker.Application.csproj" Id="c6dc8163-203f-43a7-8623-3ef3c23aa1dd" />
+  <Project Path="TravelBooker.Domain/TravelBooker.Domain.csproj" Id="5b5ef519-5300-4aad-8950-b6718e64e210" />
+  <Project Path="TravelBooker.Infrastructure/TravelBooker.Infrastructure.csproj" Id="d1aaa0a9-b40b-4674-ab13-02962eb969cf" />
+</Solution>
