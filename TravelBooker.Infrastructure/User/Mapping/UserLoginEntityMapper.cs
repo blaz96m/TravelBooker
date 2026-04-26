@@ -1,15 +1,15 @@
 using Riok.Mapperly.Abstractions;
 using TravelBooker.Application.Common.Contracts.Mapping;
+using TravelBooker.Domain;
 using TravelBooker.Infrastructure.Entities;
-using DomainUserLogin = TravelBooker.Domain.UserLogin;
 
 namespace TravelBooker.Infrastructure.User.Mapping
 {
     [Mapper]
-    public partial class UserLoginEntityMapper : IBaseEntityMapper<DomainUserLogin, UserLogin>
+    public partial class UserLoginEntityMapper : IBaseEntityMapper<UserLogin, UserLoginEntity>
     {
-        public partial DomainUserLogin ToDomain(UserLogin entity);
+        public partial UserLogin ToDomain(UserLoginEntity entity);
 
-        public partial UserLogin ToEntity(DomainUserLogin domainModel);
+        public partial UserLoginEntity ToEntity(UserLogin domainModel);
     }
 }

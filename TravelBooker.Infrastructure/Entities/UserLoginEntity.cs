@@ -1,6 +1,9 @@
+﻿using System;
+using System.Collections.Generic;
+
 namespace TravelBooker.Infrastructure.Entities;
 
-public partial class UserLogin
+public partial class UserLoginEntity
 {
     public string Email { get; set; } = null!;
 

@@ -1,4 +1,4 @@
-namespace TravelBooker.Application.Utils.Request
+namespace TravelBooker.Application.Utils.Response
 {
     public sealed class PagedList<T> : List<T>
     {

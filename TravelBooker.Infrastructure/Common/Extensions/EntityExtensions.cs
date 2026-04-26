@@ -1,7 +1,6 @@
 using TravelBooker.Infrastructure.Common.Models;
 
-namespace TravelBooker.Infrastructure.Common.Extensions
+namespace TravelBooker.Infrastructure.Entities
 {
-    public partial class UserLogin : BaseEntity { }
-
+    public partial class UserLoginEntity : BaseEntity { }
 }

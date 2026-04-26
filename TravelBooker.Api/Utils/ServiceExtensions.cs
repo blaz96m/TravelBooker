@@ -1,9 +1,13 @@
 using Microsoft.EntityFrameworkCore;
+using TravelBooker.Application.Common.Contracts.Mapping;
 using TravelBooker.Application.Logging.Contracts;
 using TravelBooker.Application.Logging.Services;
+using TravelBooker.Domain;
 using TravelBooker.Infrastructure.Context;
+using TravelBooker.Infrastructure.Entities;
+using TravelBooker.Infrastructure.User.Mapping;
 
-namespace TravelBooker.Api.Extensions
+namespace TravelBooker.Api.Common.Extensions
 {
     public static class ServiceExtensions
     {
@@ -28,7 +32,11 @@ namespace TravelBooker.Api.Extensions
         public static void ConfigurePostgresContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("travelBooker")));
+        }
 
+        public static void RegisterEntityMappers(this IServiceCollection services)
+        {
+            services.AddSingleton<IBaseEntityMapper<UserLogin, UserLoginEntity>, UserLoginEntityMapper>();
         }
     }
 }

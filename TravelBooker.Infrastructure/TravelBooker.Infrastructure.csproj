@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Entities\" />
-    <Folder Include="User\Repositories\" />
   </ItemGroup>
 
 </Project>
