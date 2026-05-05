@@ -2,8 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq.Dynamic.Core;
 using TravelBooker.Application.Common.Contracts.Infrastructure;
 using TravelBooker.Application.Common.Contracts.Mapping;
-using TravelBooker.Application.Utils.Request;
-using TravelBooker.Application.Utils.Response;
+using TravelBooker.Application.Common.Contracts.Request;
+using TravelBooker.Application.Common.Models.Request;
+using TravelBooker.Application.Common.Models.Response;
 using TravelBooker.Infrastructure.Common.Extensions;
 using TravelBooker.Infrastructure.Common.Models;
 using TravelBooker.Infrastructure.Common.Utils;
@@ -11,13 +12,14 @@ using TravelBooker.Infrastructure.Context;
 
 namespace TravelBooker.Infrastructure.Common.Repositories
 {
-    public abstract class BaseRepository<TEntity, TDomain>(AppDbContext context, IBaseEntityMapper<TDomain, TEntity> mapper) : IBaseRepository<TDomain>
+    public abstract class BaseRepository<TEntity, TDomain, TFilter>(AppDbContext context, IBaseEntityMapper<TDomain, TEntity> mapper) : IBaseRepository<TDomain>
         where TEntity : BaseEntity
+        where TFilter : IBaseFilter
     {
         protected readonly AppDbContext _context = context;
         protected readonly IBaseEntityMapper<TDomain, TEntity> _entityMapper = mapper;
 
-        protected abstract IQueryable<TEntity> ApplyFilter<TFilter>(TFilter filter, IQueryable<TEntity> query);
+        protected abstract IQueryable<TEntity> ApplyFilter(TFilter filter, IQueryable<TEntity> query);
 
         protected abstract IQueryable<TEntity> ApplyEmbeds(string[] embeds, IQueryable<TEntity> query);
 
@@ -34,8 +36,7 @@ namespace TravelBooker.Infrastructure.Common.Repositories
             return query;
         }
 
-        protected virtual IQueryable<TEntity> BuildQuery<FilterT>(IRequestModel<FilterT> requestModel)
-            where FilterT : IBaseFilter
+        protected virtual IQueryable<TEntity> BuildQuery(IRequestModel<TFilter> requestModel)
         {
             IQueryable<TEntity> query = _context.Set<TEntity>();
             query = ApplyFilter(requestModel.Filter, query);

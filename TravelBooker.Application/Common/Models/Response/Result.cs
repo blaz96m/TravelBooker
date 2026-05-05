@@ -1,4 +1,4 @@
-namespace TravelBooker.Application.Utils.Response
+namespace TravelBooker.Application.Common.Models.Response
 {
 
     public class Result

@@ -7,7 +7,7 @@ using TravelBooker.Infrastructure.Context;
 using TravelBooker.Infrastructure.Entities;
 using TravelBooker.Infrastructure.User.Mapping;
 
-namespace TravelBooker.Api.Common.Extensions
+namespace TravelBooker.Api.Utils
 {
     public static class ServiceExtensions
     {

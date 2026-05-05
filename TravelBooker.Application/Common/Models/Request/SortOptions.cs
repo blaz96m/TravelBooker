@@ -1,6 +1,6 @@
 using TravelBooker.Application.Common.Constants;
 
-namespace TravelBooker.Application.Utils.Request
+namespace TravelBooker.Application.Common.Models.Request
 {
     public class SortOptions
     {

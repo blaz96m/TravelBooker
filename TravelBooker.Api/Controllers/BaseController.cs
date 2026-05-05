@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using TravelBooker.Api.Common;
 using TravelBooker.Application.Common.Enums;
-using TravelBooker.Application.Utils.Response;
+using TravelBooker.Application.Common.Models.Response;
 
 namespace TravelBooker.Api.Controllers
 {
-
+    [Route("api")]
+    [ApiController]
     public abstract class BaseController : ControllerBase
     {
         protected IActionResult ProcessError(Error error)

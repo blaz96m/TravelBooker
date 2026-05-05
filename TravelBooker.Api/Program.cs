@@ -1,6 +1,6 @@
 
 using Microsoft.AspNetCore.HttpOverrides;
-using TravelBooker.Api.Common.Extensions;
+using TravelBooker.Api.Utils;
 
 namespace TravelBooker.Api
 {

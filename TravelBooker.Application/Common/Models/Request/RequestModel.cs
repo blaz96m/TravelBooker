@@ -1,4 +1,6 @@
-namespace TravelBooker.Application.Utils.Request
+using TravelBooker.Application.Common.Contracts.Request;
+
+namespace TravelBooker.Application.Common.Models.Request
 {
     public class RequestModel : IRequestModel
     {
