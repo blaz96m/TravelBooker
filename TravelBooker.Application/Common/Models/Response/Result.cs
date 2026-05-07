@@ -12,7 +12,7 @@ namespace TravelBooker.Application.Common.Models.Response
             Error = error;
         }
 
-        public static Result Success() => new(Error.None);
+        public readonly static Result Success = new(Error.None);
 
         public static Result Failure(Error error) => new(error);
 
@@ -34,7 +34,7 @@ namespace TravelBooker.Application.Common.Models.Response
             Value = default;
         }
 
-        public static Result<T> Success(T value) => new(value);
+        public static new Result<T> Success(T value) => new(value);
 
         public static new Result<T> Failure(Error error) => new(error);
 

@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq.Dynamic.Core;
-using TravelBooker.Application.Common.Contracts.Infrastructure;
 using TravelBooker.Application.Common.Contracts.Mapping;
+using TravelBooker.Application.Common.Contracts.Persistence;
 using TravelBooker.Application.Common.Contracts.Request;
 using TravelBooker.Application.Common.Models.Request;
 using TravelBooker.Application.Common.Models.Response;
@@ -9,6 +10,7 @@ using TravelBooker.Infrastructure.Common.Extensions;
 using TravelBooker.Infrastructure.Common.Models;
 using TravelBooker.Infrastructure.Common.Utils;
 using TravelBooker.Infrastructure.Context;
+using TravelBooker.Infrastructure.Utils;
 
 namespace TravelBooker.Infrastructure.Common.Repositories
 {
@@ -19,7 +21,11 @@ namespace TravelBooker.Infrastructure.Common.Repositories
         protected readonly AppDbContext _context = context;
         protected readonly IBaseEntityMapper<TDomain, TEntity> _entityMapper = mapper;
 
-        protected abstract IQueryable<TEntity> ApplyFilter(TFilter filter, IQueryable<TEntity> query);
+        protected virtual IQueryable<TEntity> ApplyFilter(TFilter filter, IQueryable<TEntity> query)
+        {
+            return FilterHelper<TEntity>.ApplyBaseFilter(query, filter);
+
+        }
 
         protected abstract IQueryable<TEntity> ApplyEmbeds(string[] embeds, IQueryable<TEntity> query);
 
@@ -128,7 +134,7 @@ namespace TravelBooker.Infrastructure.Common.Repositories
         }
 
 
-        public async Task Create(TDomain domainModel)
+        public async Task CreateAsync(TDomain domainModel)
         {
             var entity = _entityMapper.ToEntity(domainModel);
             InitializeEntity(entity);
@@ -158,6 +164,12 @@ namespace TravelBooker.Infrastructure.Common.Repositories
             var entity = _entityMapper.ToEntity(domainModel);
             _context.Update(entity);
         }
+
+        public async Task SaveAsync(CancellationToken cancellationToken = default)
+            => await _context.SaveChangesAsync(cancellationToken);
+
+        public async Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
+            => await _context.Database.BeginTransactionAsync(cancellationToken);
     }
 }
 

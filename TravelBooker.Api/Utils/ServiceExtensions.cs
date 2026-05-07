@@ -1,11 +1,14 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TravelBooker.Application.Common.Contracts.Mapping;
 using TravelBooker.Application.Logging.Contracts;
 using TravelBooker.Application.Logging.Services;
+using TravelBooker.Application.User.Contracts.Repositories;
 using TravelBooker.Domain;
 using TravelBooker.Infrastructure.Context;
 using TravelBooker.Infrastructure.Entities;
 using TravelBooker.Infrastructure.User.Mapping;
+using TravelBooker.Infrastructure.User.Repositories;
 
 namespace TravelBooker.Api.Utils
 {
@@ -37,6 +40,16 @@ namespace TravelBooker.Api.Utils
         public static void RegisterEntityMappers(this IServiceCollection services)
         {
             services.AddSingleton<IBaseEntityMapper<UserLogin, UserLoginEntity>, UserLoginEntityMapper>();
+        }
+
+        public static void RegisterRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<IUserLoginRepository, UserLoginRepository>();
+        }
+
+        public static void ConfigurePasswordHasher(this IServiceCollection services)
+        {
+            services.AddScoped<IPasswordHasher<UserLogin>, PasswordHasher<UserLogin>>();
         }
     }
 }

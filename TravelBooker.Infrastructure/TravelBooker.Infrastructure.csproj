@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.16.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,6 +24,7 @@
   <ItemGroup>
     <Folder Include="Common\Enums\" />
     <Folder Include="Common\NewFolder\" />
+    <Folder Include="Common\UnitOfWork\" />
     <Folder Include="Entities\" />
   </ItemGroup>
 

@@ -14,6 +14,8 @@ namespace TravelBooker.Api
             builder.Services.ConfigureCors();
             builder.Services.ConfigureIISIntegration();
             builder.Services.ConfigurePostgresContext(builder.Configuration);
+            builder.Services.RegisterEntityMappers();
+            builder.Services.RegisterRepositories();
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();

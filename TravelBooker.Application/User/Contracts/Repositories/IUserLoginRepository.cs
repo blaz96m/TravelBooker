@@ -1,4 +1,4 @@
-using TravelBooker.Application.Common.Contracts.Infrastructure;
+using TravelBooker.Application.Common.Contracts.Persistence;
 using TravelBooker.Domain;
 
 namespace TravelBooker.Application.User.Contracts.Repositories

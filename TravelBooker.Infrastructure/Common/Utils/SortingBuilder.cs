@@ -23,7 +23,7 @@ namespace TravelBooker.Infrastructure.Common.Utils
             var idx = 0;
             foreach (var orderByField in orderByFields)
             {
-                var orderField = ResolvePropertyPath(entityType, orderByField)
+                var orderField = ResolvePropertyPath(entityType, orderByField);
                 var orderDirection = orderByDirections[idx];
                 sortingBuilder.Append($"{orderField} {orderDirection}, ");
                 idx++;
