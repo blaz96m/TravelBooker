@@ -13,9 +13,12 @@ namespace TravelBooker.Api
             // Add services to the container.
             builder.Services.ConfigureCors();
             builder.Services.ConfigureIISIntegration();
+            builder.Services.RegisterDataProtection();
             builder.Services.ConfigurePostgresContext(builder.Configuration);
             builder.Services.RegisterEntityMappers();
             builder.Services.RegisterRepositories();
+            builder.Services.ConfigureAppSettings(builder.Configuration);
+            builder.Services.RegisterEmailService();
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();

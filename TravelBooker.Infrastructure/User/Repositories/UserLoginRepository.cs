@@ -20,6 +20,13 @@ namespace TravelBooker.Infrastructure.User.Repositories
             return await dbSet.AnyAsync(x => x.Email == email);
         }
 
+        public async Task<UserLogin> CreateUserAsync(UserLogin domainModel)
+        {
+            var entityModel = _entityMapper.ToEntity(domainModel);
+            await _context.AddAsync(entityModel);
+            return _entityMapper.ToDomain(entityModel);
+        }
+
         protected override IQueryable<UserLoginEntity> ApplyEmbeds(string[] embeds, IQueryable<UserLoginEntity> query)
         {
             return query;

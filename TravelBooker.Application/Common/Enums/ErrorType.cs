@@ -8,6 +8,7 @@ namespace TravelBooker.Application.Common.Enums
         Conflict = 3,
         Unauthorized = 4,
         Forbidden = 5,
+        InternalError = 6,
 
     }
 }

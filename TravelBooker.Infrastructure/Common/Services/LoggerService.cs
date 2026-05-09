@@ -1,5 +1,5 @@
 using Serilog;
-using TravelBooker.Application.Logging.Contracts;
+using TravelBooker.Application.Common.Contracts.Persistence;
 
 namespace TravelBooker.Application.Logging.Services
 {

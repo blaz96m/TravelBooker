@@ -1,4 +1,4 @@
-namespace TravelBooker.Application.Logging.Contracts
+namespace TravelBooker.Application.Common.Contracts.Persistence
 {
     public interface ILoggerService
     {

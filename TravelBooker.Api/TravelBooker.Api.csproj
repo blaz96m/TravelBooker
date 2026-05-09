@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TravelBooker.Application\TravelBooker.Application.csproj" />
+    <ProjectReference Include="..\TravelBooker.Domain\TravelBooker.Domain.csproj" />
     <ProjectReference Include="..\TravelBooker.Infrastructure\TravelBooker.Infrastructure.csproj" />
   </ItemGroup>
 

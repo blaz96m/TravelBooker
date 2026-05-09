@@ -29,5 +29,7 @@ namespace TravelBooker.Application.Common.Models.Response
 
         public static Error Forbidden(string message, Dictionary<string, object?>? additionalData = null) => new(message, ErrorType.Forbidden, additionalData);
 
+        public static Error InternalError(string message, Dictionary<string, object?>? additionalData = null) => new(message, ErrorType.InternalError, additionalData);
+
     }
 }
