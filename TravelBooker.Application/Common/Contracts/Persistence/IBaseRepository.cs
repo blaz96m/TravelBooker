@@ -7,7 +7,7 @@ namespace TravelBooker.Application.Common.Contracts.Persistence
     {
         Task<IEnumerable<TDomain>> GetAllAsnyc(RequestModel requestModel, CancellationToken cancellationToken = default);
 
-        Task<TDomain?> GetSingleAsync(int id, bool track = false, CancellationToken cancellationToken = default);
+        Task<TDomain?> GetSingleAsync(long id, bool track = false, CancellationToken cancellationToken = default);
 
         Task CreateAsync(TDomain domainModel);
 

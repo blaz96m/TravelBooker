@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.HttpOverrides;
+using Serilog;
 using TravelBooker.Api.Utils;
 
 namespace TravelBooker.Api
@@ -13,12 +14,22 @@ namespace TravelBooker.Api
             // Add services to the container.
             builder.Services.ConfigureCors();
             builder.Services.ConfigureIISIntegration();
+            builder.Host.UseSerilog((hostContext, configuration) =>
+            {
+                configuration.ReadFrom.Configuration(hostContext.Configuration);
+            });
+            builder.Services.ConfigureLogger();
             builder.Services.RegisterDataProtection();
+            builder.Services.ConfigurePasswordHasher();
             builder.Services.ConfigurePostgresContext(builder.Configuration);
             builder.Services.RegisterEntityMappers();
             builder.Services.RegisterRepositories();
             builder.Services.ConfigureAppSettings(builder.Configuration);
+
             builder.Services.RegisterEmailService();
+            builder.Services.RegisterUserServices();
+            builder.Services.RegisterValidators();
+            builder.Services.ConfigureRateLimiting(builder.Configuration);
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
@@ -41,6 +52,8 @@ namespace TravelBooker.Api
             {
                 ForwardedHeaders = ForwardedHeaders.All
             });
+
+            app.UseRateLimiter();
 
             app.UseAuthorization();
 

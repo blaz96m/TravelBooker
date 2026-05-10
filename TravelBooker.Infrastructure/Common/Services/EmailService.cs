@@ -3,10 +3,10 @@ using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using TravelBooker.Application.Common.Config;
+using TravelBooker.Application.Common.Contracts.Persistence;
 using TravelBooker.Application.Common.Contracts.Services;
 using TravelBooker.Application.Common.Models;
 using TravelBooker.Application.Common.Models.Response;
-using TravelBooker.Application.Logging.Contracts;
 
 namespace TravelBooker.Infrastructure.Common.Services;
 

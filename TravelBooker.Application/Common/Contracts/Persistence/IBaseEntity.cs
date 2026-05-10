@@ -2,7 +2,7 @@ namespace TravelBooker.Application.Common.Contracts.Persistence
 {
     public interface IBaseEntity
     {
-        int Id { get; set; }
+        long Id { get; set; }
 
         DateTime DateCreated { get; set; }
 

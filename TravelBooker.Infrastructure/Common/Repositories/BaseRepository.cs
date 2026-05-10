@@ -85,7 +85,7 @@ namespace TravelBooker.Infrastructure.Common.Repositories
             return query;
         }
 
-        protected virtual IQueryable<TEntity> BuildQuery(int id, bool track)
+        protected virtual IQueryable<TEntity> BuildQuery(long id, bool track)
         {
             IQueryable<TEntity> query = _context.Set<TEntity>();
             query = query.Where(x => x.Id == id);
@@ -153,7 +153,7 @@ namespace TravelBooker.Infrastructure.Common.Repositories
             return await GetResultsAsync(query, null, cancellationToken);
         }
 
-        public async Task<TDomain?> GetSingleAsync(int id, bool track, CancellationToken cancellationToken = default)
+        public async Task<TDomain?> GetSingleAsync(long id, bool track, CancellationToken cancellationToken = default)
         {
             var query = BuildQuery(id, track);
             return await GetResultAsync(query, cancellationToken);

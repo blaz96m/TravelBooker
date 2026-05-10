@@ -2,9 +2,9 @@ using TravelBooker.Application.Common.Contracts.Persistence;
 
 namespace TravelBooker.Infrastructure.Common.Models
 {
-    public class BaseEntity : IBaseEntity
+    public abstract class BaseEntity : IBaseEntity
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         public DateTime DateCreated { get; set; }
 

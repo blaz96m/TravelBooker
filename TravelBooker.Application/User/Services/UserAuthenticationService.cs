@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Identity;
-using TravelBooker.Application.Common.Contracts.Factories;
+using TravelBooker.Application.Common.Contracts.Persistence;
+using TravelBooker.Application.Common.Contracts.Services;
 using TravelBooker.Application.Common.Enums;
 using TravelBooker.Application.Common.Models;
 using TravelBooker.Application.Common.Models.Response;
 using TravelBooker.Application.Common.Utils;
+using TravelBooker.Application.User.Constants;
 using TravelBooker.Application.User.Contracts.Repositories;
 using TravelBooker.Application.User.Contracts.Services;
 using TravelBooker.Application.User.Dto;
-using TravelBooker.Application.User.Facades;
 using TravelBooker.Application.User.Mapping;
-using TravelBooker.Application.User.Utils;
 using TravelBooker.Domain;
 
 namespace TravelBooker.Application.User.Services
@@ -17,14 +17,16 @@ namespace TravelBooker.Application.User.Services
     public class UserAuthenticationService(
         IUserLoginRepository userLoginRepository,
         IPasswordHasher<UserLogin> passwordHasher,
-        IDataEncryptionFactory dataEncryptionFactory,
-        UserAuthenticationServiceFacade serviceFacade
+        IDataEncryptionService dataEncryptionFactory,
+        ILoggerService loggerService,
+        IEmailService emailService
         ) : IUserAuthenticationService
     {
         private readonly IUserLoginRepository _userLoginRepository = userLoginRepository;
         private readonly IPasswordHasher<UserLogin> _passwordHasher = passwordHasher;
-        private readonly IDataEncryptionFactory _dataEncryptionFactory = dataEncryptionFactory;
-        private readonly UserAuthenticationServiceFacade _serviceFacade = serviceFacade;
+        private readonly IDataEncryptionService _dataEncryptionFactory = dataEncryptionFactory;
+        private readonly ILoggerService _loggerService = loggerService;
+        private readonly IEmailService _emailService = emailService;
 
         private const string _emailVerificationTokenIdentifier = "EmailVerification";
 
@@ -59,10 +61,10 @@ namespace TravelBooker.Application.User.Services
                 HtmlBody = $"Please verify your account by clicking on the following link: {conformationLink}",
                 ToEmail = createdUser.Email,
             };
-            var emailResult = await _serviceFacade.EmailService.SendEmailAsync(emailToSend);
+            var emailResult = await _emailService.SendEmailAsync(emailToSend);
             if (!emailResult.IsSuccess)
             {
-                _serviceFacade.LoggerService.LogError($"Failed to send verification link for email: {emailToSend}");
+                _loggerService.LogError($"Failed to send verification link for email: {emailToSend}");
             }
             return Result.Success;
         }

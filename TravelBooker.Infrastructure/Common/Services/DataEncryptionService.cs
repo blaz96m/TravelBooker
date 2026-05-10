@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.DataProtection;
 using System.Security.Cryptography;
-using TravelBooker.Application.Common.Contracts.Factories;
+using TravelBooker.Application.Common.Contracts.Persistence;
 
 namespace TravelBooker.Infrastructure.Common.Factories
 {

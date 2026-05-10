@@ -1,5 +1,5 @@
+using TravelBooker.Application.Common.Contracts.Persistence;
 using TravelBooker.Application.Common.Contracts.Services;
-using TravelBooker.Application.Logging.Contracts;
 
 namespace TravelBooker.Application.User.Facades
 {

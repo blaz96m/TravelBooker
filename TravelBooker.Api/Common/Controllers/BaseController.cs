@@ -1,9 +1,11 @@
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using TravelBooker.Api.Common;
+using TravelBooker.Application.Common.Constants;
 using TravelBooker.Application.Common.Enums;
 using TravelBooker.Application.Common.Models.Response;
+using TravelBooker.Application.Common.Utils;
 
-namespace TravelBooker.Api.Controllers
+namespace TravelBooker.Api.Common.Controllers
 {
     [Route("api")]
     [ApiController]
@@ -21,8 +23,25 @@ namespace TravelBooker.Api.Controllers
                 {
                     StatusCode = StatusCodes.Status403Forbidden
                 },
+                ErrorType.InternalError => new ObjectResult(SetProblemDetails(error, StatusCodes.Status500InternalServerError, Constants.RfcForbiddenURI))
+                {
+                    StatusCode = StatusCodes.Status500InternalServerError
+                },
                 _ => throw new NotImplementedException($"The provided {nameof(ErrorType)}: {error.Type} does not match any object result")
             }; ;
+        }
+
+        protected IActionResult ProcessInvalidPayload(ValidationResult validationResult, ErrorType errorType = ErrorType.BadRequest)
+        {
+            IDictionary<string, object?>? errorAdditionalData = null;
+            if (validationResult.Errors.Any())
+            {
+                errorAdditionalData = validationResult
+                      .ToDictionary()
+                      .ToDictionary(r => r.Key, r => (object?)r.Value);
+            }
+            var error = ResponseHelpers.GenerateErrorByType(errorType, ErrorMessages.ModelValidationError, errorAdditionalData);
+            return ProcessError(error);
         }
 
         private static ProblemDetails SetProblemDetails(Error error, int status, string type)

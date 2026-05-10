@@ -4,7 +4,7 @@ namespace TravelBooker.Application.Common.Models.Request
 {
     public class BaseFilter : IBaseFilter
     {
-        public int[] Ids { get; set; } = [];
+        public long[] Ids { get; set; } = [];
 
         public DateFilter? DateCreatedFilter { get; set; }
 

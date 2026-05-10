@@ -4,7 +4,7 @@ namespace TravelBooker.Application.Common.Contracts.Request
 {
     public interface IBaseFilter
     {
-        int[] Ids { get; set; }
+        long[] Ids { get; set; }
 
         DateFilter? DateCreatedFilter { get; set; }
 

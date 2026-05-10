@@ -1,3 +1,5 @@
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using TravelBooker.Infrastructure.Entities;
 
@@ -30,7 +32,9 @@ public partial class AppDbContext : DbContext
 
             entity.HasIndex(e => e.Email, "uq_email").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .UseIdentityAlwaysColumn()
+                .HasColumnName("id");
             entity.Property(e => e.DateCreated).HasColumnName("date_created");
             entity.Property(e => e.DateUpdated).HasColumnName("date_updated");
             entity.Property(e => e.Email)

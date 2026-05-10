@@ -1,6 +1,6 @@
-namespace TravelBooker.Application.Common.Contracts.Factories
+namespace TravelBooker.Application.Common.Contracts.Persistence
 {
-    public interface IDataEncryptionFactory
+    public interface IDataEncryptionService
     {
         string CreateEncryptionKey(string identifier, string[] tokenDetails);
 

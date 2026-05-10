@@ -16,14 +16,16 @@ namespace TravelBooker.Infrastructure.User.Repositories
     {
         public async Task<bool> UserLoginDataExistsAsync(string email)
         {
-            var dbSet = _context.Set<UserLogin>();
+            var dbSet = _context.Set<UserLoginEntity>();
             return await dbSet.AnyAsync(x => x.Email == email);
         }
 
         public async Task<UserLogin> CreateUserAsync(UserLogin domainModel)
         {
             var entityModel = _entityMapper.ToEntity(domainModel);
+            InitializeEntity(entityModel);
             await _context.AddAsync(entityModel);
+            await _context.SaveChangesAsync();
             return _entityMapper.ToDomain(entityModel);
         }
 
